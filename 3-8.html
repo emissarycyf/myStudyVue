@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3-8</title>
+</head>
+<body>
+
+    <div id="app">
+      <div v-text="message1+'!'"></div>
+      <div>{{ message+'!' }}!</div>
+      <div>{{ scholl.phone }}</div>
+      <div>{{ campus[2] }}</div>    
+    </div>
+
+    <div id="use">
+      <div v-html="content"></div>
+      <div v-html="structure"></div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+      var app = new Vue({
+        el: "#app",
+        data:{
+          message: " Hello Lin ",
+          message1: " Hello Yin ",
+          scholl:{
+            phone:"1234567"
+          },
+          campus:["北京","青岛","西安"]
+        }
+      })
+  </script>
+
+  <script>
+    var use = new Vue({
+      el:"#use",
+      data:{
+        content:"b站",
+        structure:"<a href='https://www.bilibili.com'>点击进入</a>"
+      }
+    })
+  </script>
+
+</body>
+</html>

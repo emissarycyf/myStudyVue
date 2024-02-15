@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>9</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2 v-text="message" @click="changeFood"></h2>
+        <h2 @click="changeFood">{{message}}</h2>
+        <h2 @click="changeFood" v-html="message"></h2>
+        <input type="button" value="单击" @click="doIt">
+        <input type="button" value="双击" @dblclick="doIt">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+        el:"#app",
+        data:{
+            message:"龙年快乐"
+        },
+        methods:{
+            doIt:function(){
+                alert("新年快乐~~");
+            },
+            changeFood:function(){
+                // console.log(this.message);
+                this.message+="你放鞭炮了吗?"
+            }
+        }
+    })
+    </script>
+
+</body>
+</html>
